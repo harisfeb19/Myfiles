@@ -1,0 +1,4 @@
+FROM openjdk:8
+ADD target/SpringBootJPA.jar SpringBootJPA.jar
+EXPOSE 8585
+ENTRYPOINT ["java","-jar","SpringBootJPA.jar"]
