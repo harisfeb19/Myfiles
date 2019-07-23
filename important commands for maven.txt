@@ -1,0 +1,25 @@
+PATH=/c/Users/primatics/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/primatics/bin:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/Informatica/10.1.0/clients/tools/datadirect:/c/Informatica/10.1.0/clients/tools/odbcdrv:/c/Informatica/10.1.0/clients/tools/jdbcdrv:/c/Informatica/10.1.0/clients/tools/sharedlibs:/c/app/product/11.2.0/client_1/bin:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0:/c/Program Files/Intel/WiFi/bin:/c/Program Files/Common Files/Intel/WirelessCommon:/c/Program Files/SlikSvn/bin:/c/Program Files/TortoiseGit/bin:/d/apache-maven-3.0.5/bin:/c/Program Files/Java/jdk1.8.0_211/bin:/c/Program Files/TortoiseSVN/bin:/usr/bin/vendor_perl:/usr/bin/core_perl
+
+
+
+
+
+
+old one 
+
+PATH=/c/Users/primatics/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/primatics/bin:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/Informatica/10.1.0/clients/tools/datadirect:/c/Informatica/10.1.0/clients/tools/odbcdrv:/c/Informatica/10.1.0/clients/tools/jdbcdrv:/c/Informatica/10.1.0/clients/tools/sharedlibs:/c/app/product/11.2.0/client_1/bin:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0:/c/Program Files/Intel/WiFi/bin:/c/Program Files/Common Files/Intel/WirelessCommon:/c/Program Files/SlikSvn/bin:/c/Program Files/TortoiseGit/bin:/d/apache-maven-3.0.5/bin:/c/Program Files/Java/jdk1.7.0_71/bin:/c/Program Files/TortoiseSVN/bin:/usr/bin/vendor_perl:/usr/bin/core_perl
+
+
+
+
+
+
+
+
+
+//
+export JAVA_HOME='/c/Program Files/Java/jdk1.8.0_211'
+
+export M2_HOME = D:\apache-maven-3.0.5
+
+Maven home: D:\apache-maven-3.0.5
