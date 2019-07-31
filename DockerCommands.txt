@@ -1,4 +1,4 @@
-Containers
+﻿Containers
 Use docker container my_command
 
 create — Create a container from an image. 
@@ -26,3 +26,22 @@ Misc
 docker version — List info about your Docker Client and Server versions.
 docker login — Log in to a Docker registry.
 docker system prune — Delete all unused containers, unused networks, and dangling images.
+
+
+Docker file build : docker build -f DockerFile -t directoryname .
+
+You can run a Maven project by using the Maven Docker image directly, passing a Maven command to docker run:
+
+$ docker run -it --rm --name my-maven-project -v "$(pwd)":/usr/src/mymaven -w /usr/src/mymaven maven:3.3-jdk-8 mvn clean install
+
+This is a base image that you can extend, so it has the bare minimum packages needed. If you add custom package(s) to the Dockerfile, then you can build your local Docker image like this:
+
+$ docker build --tag my_local_maven:3.5.2-jdk-8 .
+
+
+Or you can just use your home .m2 cache directory that you share e.g. with your Eclipse/IDEA:
+
+$ docker run -it --rm -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2 -v "$PWD/target:/usr/src/mymaven/target" -w /usr/src/mymaven maven mvn clean package
+
+
+docker run -p 8080:8080 [image name]
