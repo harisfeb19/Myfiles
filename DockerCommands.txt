@@ -11,7 +11,14 @@ stop — Gracefully stop running container.
 kill —Stop main process in container abruptly. 
 rm— Delete a stopped container.
 
+--Docker File Java Spring
 
+FROM java:8
+EXPOSE 8080
+ADD /target/pos-1.0-SNAPSHOT.war pos-1.0-SNAPSHOT.war
+ENTRYPOINT ["java", "-jar", "pos-1.0-SNAPSHOT.war"]
+
+--
 Images
 Use docker image my_command
 
@@ -45,3 +52,5 @@ $ docker run -it --rm -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2 -v "$P
 
 
 docker run -p 8080:8080 [image name]
+
+docker container run --network employee-mysql --name employee-jdbc-container -p 8080:8080 -d employee-jdbc
