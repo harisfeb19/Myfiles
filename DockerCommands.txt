@@ -54,3 +54,25 @@ $ docker run -it --rm -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2 -v "$P
 docker run -p 8080:8080 [image name]
 
 docker container run --network employee-mysql --name employee-jdbc-container -p 8080:8080 -d employee-jdbc
+
+
+
+-- Create Network : docker network create employee-mysql
+
+-- Run Container on Network: docker container run --name mysqldb --network employee-mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=bootdb -d mysql:8
+
+docker container run --network TestNetwork-Mysql --name pos-mysql-container -p 8080:8080 -d pos
+
+docker container logs f2
+
+--Execute Container : docker container exec -it [name_of_container] bash
+
+--MySQL username -u and password -p: /# mysql -uroot -proot
+
+
+CREATE TABLE vasu.articles (
+  `article_id` int(5) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL,
+  `category` varchar(100) NOT NULL,
+  PRIMARY KEY (`article_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
