@@ -1,0 +1,123 @@
+//spring.h2.console.enabled=true
+//spring.datasource.platform=h2
+//spring.datasource.url=jdbc:h2:mem:mydb
+
+Spring Security | MySQL part 4
+
+
+// For Oauth2
+
+security.oauth2.client.client-id= <CLIENT_ID>
+security.oauth2.client.client-secret= <CLIENT_SECRET>
+security.oauth2.client.access-token-uri= https://www.googleapis.com/oauth2/v3/token
+security.oauth2.client.user-authorization-uri= https://accounts.google.com/o/oauth2/auth
+security.oauth2.client.token-name=oauth_token
+security.oauth2.client.authentication-scheme=query
+security.oauth2.client.client-authentication-scheme=form
+security.oauth2.client.scope=profile email
+# SECURITY OAUTH2 SSO (OAuth2SsoProperties)
+security.oauth2.resource.user-info-uri=https://www.googleapis.com/userinfo/v2/me
+security.oauth2.resource.prefer-token-info=false
+
+Code in AppSecurityConfig.java
+	protected void configure(HttpSecurity http) throws Exception{
+		
+		http
+		.csrf().disable()
+		.authorizeRequests().antMatchers("/login").permitAll()
+		.anyRequest().authenticated();
+	}
+
+
+
+	/*
+	 * @Bean
+	 * 
+	 * @Override protected UserDetailsService userDetailsService() { // TODO
+	 * Auto-generated method stub List<UserDetails> users = new ArrayList<>();
+	 * users.add(User.withDefaultPasswordEncoder().username("haris").password("123")
+	 * .roles("USER").build());
+	 * 
+	 * return new InMemoryUserDetailsManager(users); }
+	 */
+
+
+
+
+
+
+
+/*
+	 * @Bean public AuthenticationProvider authProvider() {
+	 * 
+	 * 
+	 * DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+	 * provider.setUserDetailsService(userDetailsService);
+	 * provider.setPasswordEncoder(new BCryptPasswordEncoder()); return provider; }
+	 */
+
+
+	/*
+	 * @Override protected void configure(AuthenticationManagerBuilder auth) throws
+	 * Exception {
+	 * 
+	 * auth.userDetailsService(userDetailsService)
+	 * .passwordEncoder(getPasswordEncoder());
+	 * 
+	 * }
+	 */
+		
+//		@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//			http 
+//			.csrf().disable();
+//			http.authorizeRequests()
+//				.antMatchers("**/").authenticated()
+//				.anyRequest().permitAll()
+//				.and()
+//				.formLogin().permitAll();
+//			
+//	}
+//		private PasswordEncoder getPasswordEncoder(){
+//			
+//			return new PasswordEncoder() {
+//			@Override
+//			public boolean matches(CharSequence rawPassword, String encodedPassword) {
+//				// TODO Auto-generated method stub
+//				return true;
+//			}
+//			
+//			@Override
+//			public String encode(CharSequence rawPassword) {
+//				// TODO Auto-generated method stub
+//				return rawPassword.toString();
+//			}
+//		};
+//	}
+}
+
+
+	/*
+	 * @Override protected void configure(HttpSecurity http) throws Exception { //
+	 * TODO Auto-generated method stub http .csrf().disable()
+	 * .authorizeRequests().antMatchers("/login").permitAll()
+	 * .anyRequest().authenticated() .and() .formLogin()
+	 * .loginPage("/login").permitAll() .and() .logout().invalidateHttpSession(true)
+	 * .clearAuthentication(true) .logoutRequestMatcher(new
+	 * AntPathRequestMatcher("/logout"))
+	 * .logoutSuccessUrl("/logout-success").permitAll(); }
+	 */ 
+
+
+/*
+				 * .url("ldap://localhost:8083/dc=springframework,dc=org") .and()
+				 */
+
+
+
+
+
+************************************
+https://github.com/pavansolapure/opencodez-samples
+
+https://www.opencodez.com/java/configure-ldap-authentication-using-spring-boot.htm
